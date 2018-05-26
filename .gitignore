@@ -259,3 +259,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/tinypath/Debug-Dll
+/tinypath/temp/tinyxml2/Win32-Debug-Dll
+/tinypath/temp/tinyxml2/x64-Debug-Dll
+/tinypath/temp/tinyxml2/x64-Debug-Lib/tinyxml2.tlog
+/tinypath/temp/tinyxml2/x64-Debug-Lib/tinyxml2.idb
+/tinypath/temp/tinyxml2/x64-Release-Lib/tinyxml2.tlog
