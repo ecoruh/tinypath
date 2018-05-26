@@ -47,11 +47,8 @@ namespace tinypath
       auto parts = tinyutils::split(path);
       if (parts.size() == 1) {
          const char* ptr = root->Attribute(parts[0].c_str());
-         if (ptr != nullptr) {
-            value = ptr;
-            return true;
-         }
-         return false;
+         if (ptr != nullptr) value = ptr;
+         return ptr != nullptr;
       }
       auto part = parts[0];
       for (auto sib = root->FirstChildElement(); sib != nullptr; sib = sib->NextSiblingElement()) {
