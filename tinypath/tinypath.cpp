@@ -51,13 +51,11 @@ namespace tinypath
          return ptr != nullptr;
       }
       auto part = parts[0];
-      for (auto sib = root->FirstChildElement(); sib != nullptr; sib = sib->NextSiblingElement()) {
-         auto part_len = part.length();
-         if (!part.compare(sib->Value())) {
-            string _path(path);
-            tinyutils::ltrim(_path.erase(_path.find(part), part_len), '/');
-            return attribute(sib, _path, value);
-         }
+      auto sib = root->FirstChildElement(part.c_str());
+      if (sib != nullptr) {
+         string _path(path);
+         tinyutils::ltrim(_path.erase(_path.find(part), part.length()), '/');
+         return attribute(sib, _path, value);
       }
       return false;
    }
